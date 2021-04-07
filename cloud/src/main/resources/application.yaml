@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/mybatis?serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 10
+  application:
+    name: boot-mybatis
+  messages:
+    basename: i18n.messages
+mybatis:
+  #  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.zhang: debug
+  file:
+    path: d:/logs
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 7
+
