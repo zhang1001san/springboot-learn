@@ -21,9 +21,9 @@ public class HelloController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
     @Autowired
-    private DepartmentMapper departmentMapper;
-    @Autowired
     private MessageSource messageSource;
+
+    private DepartmentMapper departmentMapper;
 
     @GetMapping("/hello")
     public String hello() {
@@ -31,13 +31,13 @@ public class HelloController {
     }
 
     @GetMapping("/log/{num}")
-    public String log(@PathVariable("num")int num) {
-        for (int i=0;i<num;i++){
-            LOGGER.trace("logger trace 级别"+i);
-            LOGGER.debug("logger debug 级别"+i);
-            LOGGER.info("logger info 级别"+i);
-            LOGGER.warn("logger warn 级别"+i);
-            LOGGER.error("logger error 级别"+i);
+    public String log(@PathVariable("num") int num) {
+        for (int i = 0; i < num; i++) {
+            LOGGER.trace("logger trace 级别" + i);
+            LOGGER.debug("logger debug 级别" + i);
+            LOGGER.info("logger info 级别" + i);
+            LOGGER.warn("logger warn 级别" + i);
+            LOGGER.error("logger error 级别" + i);
         }
         return "hello";
     }
